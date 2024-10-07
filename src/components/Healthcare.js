@@ -73,7 +73,7 @@ const Divider = styled.div`
   background-color: #ffdeff;
   position: absolute;
   top: 0;
-  bottom: -5vmin;
+  bottom: 0;
   left: ${(props) => props.position}%;
   &::before {
     content: "";

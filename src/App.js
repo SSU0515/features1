@@ -41,7 +41,7 @@ const Container = styled.div`
   overflow-x: hidden;
   min-width: 1280px;
   @media (max-width: 600px) {
-    min-width: 500px;
+    min-width: 360px;
     width: 100vw;
     height: 100vh;
   }

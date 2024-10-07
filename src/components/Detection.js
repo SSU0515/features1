@@ -65,7 +65,7 @@ const Lucy = styled.img`
   @media (max-width: 600px) {
     width: 80vw;
     top: -40vw;
-    left: 70vw;
+    left: 65vmin;
     z-index: 1;
   }
 `;
@@ -90,10 +90,11 @@ const DropzoneArea = styled.div`
   @media (max-width: 600px) {
     bottom: 10%;
     left: 35%;
-    font-size: 3vw;
+    font-size: 2.5vmin;
     span {
+      width: 100vmin;
     margin-top: 80px;
-    padding-left: 10%;
+    padding-left: 27vmin;
   }
   }
 `;
@@ -106,11 +107,11 @@ const LoadingContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; /* 중앙 정렬 */
-  text-align: center; /* 텍스트 중앙 정렬 */
+  justify-content: center; 
+  text-align: center; 
   @media (max-width: 600px) {
-    left: 54%;
-    top: -41vh;
+    left:65vmin;
+    top: -75vmin;
   }
 `;
 
@@ -120,7 +121,7 @@ const LoadingText = styled.p`
   color: #fff;
   @media (max-width: 600px) {
     font-size: 14px;
-    margin-top: 30px;
+    margin-top: 15vmin;
   }
 `;
 
@@ -134,7 +135,7 @@ const GaugeContainer = styled.div`
   justify-content: center; /* 중앙 정렬 */
   text-align: center; /* 텍스트 중앙 정렬 */
   @media (max-width: 600px) {
-    left: 54%;
+    left:63vmin;
     top: -50vh;
   }
 `;

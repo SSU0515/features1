@@ -55,7 +55,6 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 30vmin;
   }
 `;
 
@@ -101,7 +100,7 @@ const TextBox = styled.div`
   }
   @media (max-width: 600px) {
     width: 80vmin;
-    margin-right: 30vmin;
+
     span {
       font-size: 4vmin;
     }

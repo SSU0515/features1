@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import after from "../asset/after.mp4";
 import before from "../asset/before.mp4";
 import styled from "styled-components";
- 
+
 const Container = styled.div`
   width: 100%;
   height: 120vh;
@@ -14,7 +14,7 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 `;
- 
+
 const BgTitle = styled.h3`
   position: absolute;
   top: 60px;
@@ -30,7 +30,7 @@ const BgTitle = styled.h3`
     z-index: 0;
   }
 `;
- 
+
 const Title = styled.h2`
   position: absolute;
   top: 180px;
@@ -42,7 +42,7 @@ const Title = styled.h2`
     left: 20px;
   }
 `;
- 
+
 const Wrapper = styled.div`
   display: flex;
   justify-content: center;
@@ -53,28 +53,27 @@ const Wrapper = styled.div`
   overflow: hidden;
   @media (max-width: 600px) {
     display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-right: 30vmin;
+    justify-content: center;
+    align-items: center;
+    margin-right: 30vmin;
   }
 `;
- 
+
 const VideoWrapper = styled.div`
   width: 100vmin;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-
 `;
- 
+
 const Divider = styled.div`
   width: 1vmin;
   cursor: ew-resize;
   background-color: #ffdeff;
   position: absolute;
   top: 0;
-  bottom: -5vmin;
+  bottom: 0;
   left: ${(props) => props.position}%;
   &::before {
     content: "";
@@ -86,67 +85,91 @@ const Divider = styled.div`
     right: 0;
   }
 `;
- 
+
 const TextBox = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 90vmin;
+  width: 80vmin;
   height: 10vmin;
   span {
-    color: #fff;
+    color: #000;
     font-size: 2vmin;
+    background-color: #888;
+    padding: 1vmin;
+    border-radius: 1vmin;
   }
   @media (max-width: 600px) {
     width: 80vmin;
-  margin-right: 30vmin;
-
+    margin-right: 30vmin;
     span {
-    font-size: 4vmin;
-  }
+      font-size: 4vmin;
+    }
   }
 `;
- 
+
 const Video1 = styled.video`
   width: 100%;
   height: 100%;
 `;
- 
+
 const Video2 = styled.video`
   width: 100%;
   height: 100%;
 `;
- 
+
 const Healthcare = () => {
   const [position, setPosition] = useState(60);
   const dividerRef = useRef(null);
- 
+
   const handleMouseMove = (e) => {
     if (dividerRef.current) {
       const rect = dividerRef.current.parentNode.getBoundingClientRect();
       const newPosition = ((e.clientX - rect.left) / rect.width) * 100;
- 
+
       if (newPosition >= 0 && newPosition <= 100) {
         setPosition(newPosition);
       }
     }
   };
- 
+
+  const handleTouchMove = (e) => {
+    if (dividerRef.current) {
+      const rect = dividerRef.current.parentNode.getBoundingClientRect();
+      const touch = e.touches[0];
+      const newPosition = ((touch.clientX - rect.left) / rect.width) * 100;
+
+      if (newPosition >= 0 && newPosition <= 100) {
+        setPosition(newPosition);
+      }
+    }
+  };
+
   const handleMouseDown = () => {
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("mouseup", handleMouseUp);
   };
- 
+
+  const handleTouchStart = () => {
+    window.addEventListener("touchmove", handleTouchMove);
+    window.addEventListener("touchend", handleTouchEnd);
+  };
+
   const handleMouseUp = () => {
     window.removeEventListener("mousemove", handleMouseMove);
     window.removeEventListener("mouseup", handleMouseUp);
   };
- 
+
+  const handleTouchEnd = () => {
+    window.removeEventListener("touchmove", handleTouchMove);
+    window.removeEventListener("touchend", handleTouchEnd);
+  };
+
   return (
     <Container>
       <BgTitle>Health Care</BgTitle>
       <Title>Health Care</Title>
- 
+
       <Wrapper>
         <VideoWrapper>
           {position > 50 ? (
@@ -159,14 +182,15 @@ const Healthcare = () => {
           ref={dividerRef}
           position={position}
           onMouseDown={handleMouseDown}
+          onTouchStart={handleTouchStart}
         />
       </Wrapper>
       <TextBox>
-        <span>Before</span>
-        <span>After</span>
+        <span>Input</span>
+        <span>Output</span>
       </TextBox>
     </Container>
   );
 };
- 
+
 export default Healthcare;

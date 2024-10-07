@@ -69,8 +69,8 @@ function App() {
       <Music />
 
       <Detection />
-      <Demo />
       <Healthcare />
+      <Demo />
       <PostsContainer>
         <ul>
           {posts.map((post) => (

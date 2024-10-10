@@ -69,7 +69,7 @@ const VideoWrapper = styled.div`
 const Divider = styled.div`
   width: 1vmin;
   cursor: ew-resize;
-  background-color: #ffdeff;
+  background-color: #fff;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -82,6 +82,9 @@ const Divider = styled.div`
     position: absolute;
     top: 0;
     right: 0;
+  }
+  @media (max-width: 600px) {
+    width: 3vmin;
   }
 `;
 

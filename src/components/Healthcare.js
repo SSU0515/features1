@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import after from "../asset/after.mp4";
 import before from "../asset/before.mp4";
 import styled from "styled-components";
+import divider from "../asset/divider.svg"
 
 const Container = styled.div`
   width: 100%;
@@ -67,21 +68,26 @@ const VideoWrapper = styled.div`
 `;
 
 const Divider = styled.div`
-  width: 3vmin;
+  width: 10vmin;
+  height: 100vmin;
   cursor: ew-resize;
-  background-color: #fff;
+  background-image: url(${divider});
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size:contain;
+  /* background-color: #fff; */
   position: absolute;
   top: 0;
   bottom: 0;
   left: ${(props) => props.position}%;
   &::before {
     content: "";
-    width: 100vmin;
+    width: 90vmin;
     height: 100vmin;
     background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
     top: 0;
-    right: 0;
+    right:5vmin;
   }
 
 `;
@@ -119,13 +125,13 @@ const Video2 = styled.video`
 `;
 
 const Healthcare = () => {
-  const [position, setPosition] = useState(60);
+  const [position, setPosition] = useState(45);
   const dividerRef = useRef(null);
 
   const handleMouseMove = (e) => {
     if (dividerRef.current) {
       const rect = dividerRef.current.parentNode.getBoundingClientRect();
-      const newPosition = ((e.clientX - rect.left) / rect.width) * 100;
+      const newPosition = ((e.clientX - rect.left) / rect.width) * 90;
 
       if (newPosition >= 0 && newPosition <= 100) {
         setPosition(newPosition);

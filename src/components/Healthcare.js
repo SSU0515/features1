@@ -67,7 +67,7 @@ const VideoWrapper = styled.div`
 `;
 
 const Divider = styled.div`
-  width: 1vmin;
+  width: 3vmin;
   cursor: ew-resize;
   background-color: #fff;
   position: absolute;
@@ -83,9 +83,7 @@ const Divider = styled.div`
     top: 0;
     right: 0;
   }
-  @media (max-width: 600px) {
-    width: 3vmin;
-  }
+
 `;
 
 const TextBox = styled.div`

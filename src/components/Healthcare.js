@@ -78,6 +78,7 @@ const Wrapper2 = styled.div`
   overflow: hidden;
   background-image: url(${videoBg2});
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
   @media (max-width: 600px) {
     display: flex;

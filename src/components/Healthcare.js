@@ -4,6 +4,8 @@ import before from "../asset/before.mp4";
 import after1 from "../asset/after1.mp4";
 import before1 from "../asset/before1.mp4";
 import styled from "styled-components";
+import videoBg from "../asset/videoBg1.jfif";
+import videoBg2 from "../asset/videoBg2.jfif";
 import divider from "../asset/divider.svg";
 
 const Container = styled.div`
@@ -57,6 +59,26 @@ const Wrapper = styled.div`
   height: 80vmin;
   position: relative;
   overflow: hidden;
+  background-image: url(${videoBg});
+  background-repeat: no-repeat;
+  background-size: contain;
+  @media (max-width: 600px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+const Wrapper2 = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vmin;
+  height: 80vmin;
+  position: relative;
+  overflow: hidden;
+  background-image: url(${videoBg2});
+  background-repeat: no-repeat;
+  background-size: contain;
   @media (max-width: 600px) {
     display: flex;
     justify-content: center;
@@ -129,12 +151,12 @@ const Video2 = styled.video`
 `;
 
 const Video3 = styled.video`
-  width: 90%;
+  width: 100%;
   height: 100%;
 `;
 
 const Video4 = styled.video`
-  width: 90%;
+  width: 100%;
   height: 100%;
 `;
 
@@ -256,7 +278,7 @@ const Healthcare = () => {
         </TextBox>
       </div>
       <div>
-        <Wrapper>
+        <Wrapper2>
           <VideoWrapper>
             {position2 > 50 ? (
               <Video3 src={before1} autoPlay />
@@ -270,7 +292,7 @@ const Healthcare = () => {
             onMouseDown={handleMouseDown2}
             onTouchStart={handleTouchStart2}
           />
-        </Wrapper>
+        </Wrapper2>
         <TextBox>
           <span>Input</span>
           <span>Output</span>

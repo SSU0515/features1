@@ -134,7 +134,7 @@ const MusicComponent = ({ song, onButtonClick = () => {} }) => {
       analyserRef.current.getByteFrequencyData(dataArray);
 
       canvasCtx.clearRect(0, 0, WIDTH, HEIGHT);
-      canvasCtx.fillStyle = "#110f0f";
+      canvasCtx.fillStyle = "#000";
       canvasCtx.fillRect(0, 0, WIDTH, HEIGHT);
 
       const barWidth = (WIDTH / bufferLength) * 2.5;

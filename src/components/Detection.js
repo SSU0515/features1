@@ -209,8 +209,7 @@ const Detection = () => {
       <BgTitle>AI Voice Detection</BgTitle>
       <Title>AI Voice Detection</Title>
       <Veta>
-        정해진 파일명에만 반응하는 Beta 버전입니다. <br/>실제 모델 출시는 11월
-        예정입니다.
+        정해진 파일명에만 반응하는 Beta 버전입니다. 
       </Veta>
       <DropzoneArea {...getRootProps()}>
         <Lucy src={lucy5} alt="lucy5" />

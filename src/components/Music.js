@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import MusicComponent from "./music/MusicConponent";
 import gra from "../asset/gradation.png";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons';
+
 
 //kanabon
 import kanabon from "../asset/music/kanavon.png";
@@ -105,7 +108,7 @@ const NavButton = styled.button`
   border: none;
   font-size: 16px;
   cursor: pointer;
-  z-index: 0;
+  z-index: 10;
   &:hover {
     color: #ff723a;
   }
@@ -263,13 +266,13 @@ const Music = () => {
       <ImgBoxBack src={gra} alt="a" />
       <h3>AI Vocal Cloning</h3>
       <PrevButton onClick={handlePrevClick}>
-        {/* <FontAwesomeIcon icon={faChevronUp} /> */}
-        {/* PREV */}
+        <FontAwesomeIcon icon={faChevronUp} />
+        PREV
       </PrevButton>
       <NextButton onClick={handleNextClick}>
-        {/* NEXT */}
+        NEXT
       
-        {/* <FontAwesomeIcon icon={faChevronDown} /> */}
+        <FontAwesomeIcon icon={faChevronDown} />
       </NextButton>
     </Container>
   );

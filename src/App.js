@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import { createGlobalStyle } from "styled-components";
 import styled from "styled-components";
-import Music from "./components/Music";
+// import Music from "./components/Music";
 import Detection from "./components/Detection";
 import Demo from "./components/Demo";
 import Healthcare from "./components/Healthcare";

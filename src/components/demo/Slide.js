@@ -6,7 +6,7 @@ import BoxContent from "./BoxContent";
 const BoxBase = styled(motion.div)`
   position: absolute;
   top: 5vmin;
-  border-radius: 100%;
+  border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,6 +37,25 @@ const BoxBase = styled(motion.div)`
   }
 `;
 
+const Title =styled.span`
+  position: absolute;
+  bottom: ${(props) => (props.size === "large" ? "-5vmin" : "-3vmin")};
+  color: ${(props) => (props.size === "large" ? "#ff8817" : "#777")};
+  font-size: 2vmin;
+  font-weight: 600;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+    text-align: center;
+    width: 100vw;
+    bottom:-7vmin;
+    left: 60%;
+    transform: translate(-50%);
+    font-size: 5vmin;
+  }
+
+`
+
 const Slide = ({ item, variants, custom, position, size, imgsize }) => {
   return (
     <BoxBase
@@ -50,6 +69,7 @@ const Slide = ({ item, variants, custom, position, size, imgsize }) => {
       size={size}
     >
       <BoxContent item={item} img={item.src} imgsize={imgsize} />
+      <Title size={size}>{item.title}</Title>
     </BoxBase>
   );
 };

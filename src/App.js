@@ -66,11 +66,12 @@ function App() {
     <Container>
       <GlobalStyle />
       {/* <Header /> */}
-      <Music />
+      {/* <Music /> */}
 
-      <Detection />
-      <Healthcare />
+
       <Demo />
+      <Healthcare />
+      <Detection />
       <PostsContainer>
         <ul>
           {posts.map((post) => (

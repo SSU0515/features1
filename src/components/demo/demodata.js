@@ -6,19 +6,25 @@ import img4 from "../../asset/루시노래썸네일.png";
 export const data = [
   {
     id: 1,
-    title: "sk 회장연설",
+    title: "지무비",
+    src: "https://www.braindeck.net/wp-content/uploads/2025/02/스크린샷-2025-02-21-152354.png",
+    url: "https://www.braindeck.net/wp-content/uploads/2025/02/G-Moive_Eng-1.mp4",
+  },
+  {
+    id: 1,
+    title: "SK 회장 연설",
     src: "https://www.braindeck.net/wp-content/uploads/2024/12/스크린샷-2024-12-05-165941.png",
     url: "https://www.braindeck.net/wp-content/uploads/2024/12/sk_choi.mp4",
   },
   {
     id: 2,
-    title: "이선균 목소리",
+    title: "[기생충_베트남어 AI 더빙] 이선균",
     src: img1,
     url: "https://www.braindeck.net/wp-content/uploads/2024/08/%EA%B8%B0%EC%83%9D%EC%B6%A9_Ai-Dubbing_1080p.mp4",
   },
   {
     id: 3,
-    title: "그해 우리는 영어 더빙",
+    title: "[그 해 우리는 _ 영어 AI 더빙] 김다미 , 최우식식",
     src: "https://cdn.sideview.co.kr/news/photo/202212/10778_9225_196.jpg",
     url: "https://www.braindeck.net/wp-content/uploads/2024/12/AI-emotions-by.mp4",
   },
@@ -34,12 +40,12 @@ export const data = [
     src: img4,
     url: "https://www.braindeck.net/wp-content/uploads/2024/08/%EB%A3%A8%EC%8B%9C5-%ED%85%8C%EC%8A%A4%ED%8A%B8-%EC%98%81%EC%83%81-1.mp4",
   },
-  {
-    id: 6,
-    title: "AI 보이스 대결",
-    src: "https://i.ytimg.com/vi/VOh3_l5yEoo/maxresdefault.jpg",
-    url: "https://www.braindeck.net/wp-content/uploads/2024/08/Realvoice-AI%EA%B0%80-%EB%85%B8%EB%9E%98%EB%A5%BC-%EB%B6%80%EB%A5%B8%EB%8B%A4%EA%B3%A0_-%EC%95%84%EB%8B%88.-%EC%97%AC%EA%B8%B0%EC%97%90-AI%EA%B0%80-%EC%9E%88%EB%8B%A4%EA%B3%A0_.mp4",
-  },
+  // {
+  //   id: 6,
+  //   title: "AI 보이스 대결",
+  //   src: "https://i.ytimg.com/vi/VOh3_l5yEoo/maxresdefault.jpg",
+  //   url: "https://www.braindeck.net/wp-content/uploads/2024/08/Realvoice-AI%EA%B0%80-%EB%85%B8%EB%9E%98%EB%A5%BC-%EB%B6%80%EB%A5%B8%EB%8B%A4%EA%B3%A0_-%EC%95%84%EB%8B%88.-%EC%97%AC%EA%B8%B0%EC%97%90-AI%EA%B0%80-%EC%9E%88%EB%8B%A4%EA%B3%A0_.mp4",
+  // },
   {
     id: 7,
     title: "애니뮤직 1",

@@ -5,45 +5,35 @@ import BoxContent from "./BoxContent";
 
 const BoxBase = styled(motion.div)`
   position: absolute;
-  top: 0;
+  top: 5vmin;
   border-radius: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: left;
-  width: ${(props) => (props.size === "large" ? "25vw" : "15vw")};
-  height: ${(props) => (props.size === "large" ? "25vw" : "15vw")};
-  z-index:${(props)=> (props.size ===  "large" ? "7" : "0")};
-
-
+  background: ${(props) => `url(${props.background}) center center no-repeat`};
+  background-size: contain;
+  width: ${(props) => (props.size === "large" ? "50vmin" : "35vmin")};
+  height: ${(props) => (props.size === "large" ? "50vmin" : "35vmin")};
+  z-index: ${(props) => (props.size === "large" ? "3" : "0")};
+  transition: all 0.3s linear;
   ${(props) =>
     props.size !== "large" &&
     `
-      top: 10%;
+      top: 18vmin;
       h2 {
         font-size: 25px;
       }
       p {
         font-size: 16px;
       }
-      &::after {
-        content: "";
-        position: absolute;
-        top: -10px;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(15, 15, 15, 0.8);
-        border-radius: 100%;
-        z-index: 0;
-      }
     `};
-  @media (max-width: 600px) {
-    top: 50;
-    margin-left: 0;
-    width: ${(props) => (props.size === "large" ? "100vw" : "55vw")};
-    height: ${(props) => (props.size === "large" ? "100vw" : "55vw")};
-    
+  @media (max-width: 768px) {
+    top: 15vmin;
+    margin-left: 20vmin;
+    width: ${(props) => (props.size === "large" ? "50vw" : "55vw")};
+    height: ${(props) => (props.size === "large" ? "60vw" : "55vw")};
+    display: ${(props) => (props.size === "large" ? "flex" : "none")};
   }
 `;
 

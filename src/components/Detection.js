@@ -23,6 +23,8 @@ const BgTitle = styled.h3`
   color: #222;
   z-index: 0;
   @media (max-width: 600px) {
+    width: 200vw;
+    left: 0;
     font-size: 30vw;
     font-weight: 900;
     top: 0;

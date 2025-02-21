@@ -4,6 +4,11 @@ import styled from "styled-components";
 import Slide from "./demo/Slide";
 import Modal from "./demo/Modal";
 import { data } from "./demo/demodata";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCaretLeft,
+  faCaretRight,
+} from "@fortawesome/free-solid-svg-icons";
 
 const Container = styled.div`
   width: 100%;
@@ -26,6 +31,8 @@ const BgTitle = styled.h3`
   color: #222;
   z-index: 0;
   @media (max-width: 600px) {
+    width: 200vw;
+    left: 0;
     font-size: 30vw;
     font-weight: 900;
     top: 15px;
@@ -72,30 +79,29 @@ const Buttons = styled.div`
   justify-content: space-between;
   align-items: center;
   z-index: 0;
-  @media (max-width: 600px) {
-    left: -10vw;
-    top: 30%;
-    width: 120vw;
-    z-index: 7;
+  @media (max-width: 768px) {
+    left: 40vw;
+    width: 90vw;
+    z-index: 0;
   }
 `;
 
 const Button = styled.button`
   border: none;
-  background: none;
-  color: #666;
-  font-size: 30px;
+  background-color: #555;
+  color: #333;
+  font-size: 5vmin;
+  padding: 1.5vmin 3vmin;
   cursor: pointer;
+  border-radius: 10vmin;
   &:hover {
+    background-color: #fff;
     color: #ff723a;
   }
-  @media (max-width: 600px) {
-    color: transparent;
-    font-size: 80px;
-    &:hover {
-      color: transparent;
-    }
-  }
+  @media (max-width: 800px) {
+    font-size: 5vmin;
+    z-index:0;
+  };
 `;
 
 const boxVariants = {
@@ -154,8 +160,8 @@ function Demo() {
 
   return (
     <Container>
-      <BgTitle>Library</BgTitle>
-      <Title>Library</Title>
+      <BgTitle>Project</BgTitle>
+      <Title>Project</Title>
       <BoxContainer>
         <AnimatePresence custom={back} mode="sync">
           {data.length > 0 && (
@@ -200,11 +206,12 @@ function Demo() {
             />
           )}
         </AnimatePresence>
-      </BoxContainer>
-      <Buttons>
-        <Button onClick={prevBtn}>◀</Button>
-        <Button onClick={nextBtn}>▶</Button>
+        <Buttons>
+        <Button onClick={prevBtn}><FontAwesomeIcon icon={faCaretLeft} /></Button>
+        <Button onClick={nextBtn}><FontAwesomeIcon icon={faCaretRight} /></Button>
       </Buttons>
+      </BoxContainer>
+      
       <Modal
         modalOpen={modalOpen}
         modalClose={closeModal}

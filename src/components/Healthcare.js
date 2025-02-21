@@ -32,9 +32,11 @@ const BgTitle = styled.h3`
   color: #222;
   z-index: 0;
   @media (max-width: 600px) {
+    width: 200vw;
     font-size: 30vw;
     font-weight: 900;
     top: 0;
+    left:0;
     z-index: 0;
   }
 `;
@@ -161,19 +163,24 @@ const Video4 = styled.video`
   height: 100%;
 `;
 
+
 const Healthcare = () => {
-  const [position1, setPosition1] = useState(45); // 첫 번째 Divider 상태
-  const [position2, setPosition2] = useState(45); // 두 번째 Divider 상태
+  const [position1, setPosition1] = useState(45);
+  const [position2, setPosition2] = useState(45);
   const dividerRef1 = useRef(null);
   const dividerRef2 = useRef(null);
+  const videoRef1 = useRef(null);
+  const videoRef2 = useRef(null);
 
   const handleMouseMove1 = (e) => {
     if (dividerRef1.current) {
       const rect = dividerRef1.current.parentNode.getBoundingClientRect();
       const newPosition = ((e.clientX - rect.left) / rect.width) * 90;
-
       if (newPosition >= 0 && newPosition <= 100) {
         setPosition1(newPosition);
+        if (videoRef1.current) {
+          videoRef1.current.play(); // 비디오 재생
+        }
       }
     }
   };
@@ -183,9 +190,11 @@ const Healthcare = () => {
       const rect = dividerRef1.current.parentNode.getBoundingClientRect();
       const touch = e.touches[0];
       const newPosition = ((touch.clientX - rect.left) / rect.width) * 90;
-
       if (newPosition >= 0 && newPosition <= 100) {
         setPosition1(newPosition);
+        if (videoRef1.current) {
+          videoRef1.current.play(); // 비디오 재생
+        }
       }
     }
   };
@@ -194,9 +203,11 @@ const Healthcare = () => {
     if (dividerRef2.current) {
       const rect = dividerRef2.current.parentNode.getBoundingClientRect();
       const newPosition = ((e.clientX - rect.left) / rect.width) * 90;
-
       if (newPosition >= 0 && newPosition <= 100) {
         setPosition2(newPosition);
+        if (videoRef2.current) {
+          videoRef2.current.play(); // 비디오 재생
+        }
       }
     }
   };
@@ -206,9 +217,11 @@ const Healthcare = () => {
       const rect = dividerRef2.current.parentNode.getBoundingClientRect();
       const touch = e.touches[0];
       const newPosition = ((touch.clientX - rect.left) / rect.width) * 90;
-
       if (newPosition >= 0 && newPosition <= 100) {
         setPosition2(newPosition);
+        if (videoRef2.current) {
+          videoRef2.current.play(); // 비디오 재생
+        }
       }
     }
   };
@@ -261,9 +274,9 @@ const Healthcare = () => {
         <Wrapper>
           <VideoWrapper>
             {position1 > 50 ? (
-              <Video1 src={before} autoPlay />
+              <Video1 ref={videoRef1} src={before} />
             ) : (
-              <Video2 src={after} autoPlay />
+              <Video2 ref={videoRef1} src={after} />
             )}
           </VideoWrapper>
           <Divider
@@ -282,9 +295,9 @@ const Healthcare = () => {
         <Wrapper2>
           <VideoWrapper>
             {position2 > 50 ? (
-              <Video3 src={before1} autoPlay />
+              <Video3 ref={videoRef2} src={before1} />
             ) : (
-              <Video4 src={after1} autoPlay />
+              <Video4 ref={videoRef2} src={after1} />
             )}
           </VideoWrapper>
           <Divider
@@ -302,5 +315,6 @@ const Healthcare = () => {
     </Container>
   );
 };
+
 
 export default Healthcare;

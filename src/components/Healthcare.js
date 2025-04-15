@@ -5,7 +5,7 @@ import before from "../asset/before.mp4";
 // import before1 from "../asset/before1.mp4";
 import styled from "styled-components";
 import videoBg from "../asset/videoBg1.jfif";
-import videoBg2 from "../asset/videoBg2.jfif";
+// import videoBg2 from "../asset/videoBg2.jfif";
 import divider from "../asset/divider.svg";
 import AudioPlayer from "./AudioPlayer";
 
@@ -72,24 +72,24 @@ const Wrapper = styled.div`
     align-items: center;
   }
 `;
-const Wrapper2 = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80vmin;
-  height: 80vmin;
-  position: relative;
-  overflow: hidden;
-  background-image: url(${videoBg2});
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  @media (max-width: 600px) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-`;
+// const Wrapper2 = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 80vmin;
+//   height: 80vmin;
+//   position: relative;
+//   overflow: hidden;
+//   background-image: url(${videoBg2});
+//   background-repeat: no-repeat;
+//   background-position: center;
+//   background-size: cover;
+//   @media (max-width: 600px) {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//   }
+// `;
 
 const VideoWrapper = styled.div`
   width: 100vmin;
@@ -169,11 +169,11 @@ const Video2 = styled.video`
 
 const Healthcare = () => {
   const [position1, setPosition1] = useState(45);
-  const [position2, setPosition2] = useState(45);
+  // const [position2, setPosition2] = useState(45);
   const dividerRef1 = useRef(null);
-  const dividerRef2 = useRef(null);
+  // const dividerRef2 = useRef(null);
   const videoRef1 = useRef(null);
-  const videoRef2 = useRef(null);
+  // const videoRef2 = useRef(null);
 
   const handleMouseMove1 = (e) => {
     if (dividerRef1.current) {
@@ -202,32 +202,32 @@ const Healthcare = () => {
     }
   };
 
-  const handleMouseMove2 = (e) => {
-    if (dividerRef2.current) {
-      const rect = dividerRef2.current.parentNode.getBoundingClientRect();
-      const newPosition = ((e.clientX - rect.left) / rect.width) * 90;
-      if (newPosition >= 0 && newPosition <= 100) {
-        setPosition2(newPosition);
-        if (videoRef2.current) {
-          videoRef2.current.play(); // 비디오 재생
-        }
-      }
-    }
-  };
+  // const handleMouseMove2 = (e) => {
+  //   if (dividerRef2.current) {
+  //     const rect = dividerRef2.current.parentNode.getBoundingClientRect();
+  //     const newPosition = ((e.clientX - rect.left) / rect.width) * 90;
+  //     if (newPosition >= 0 && newPosition <= 100) {
+  //       setPosition2(newPosition);
+  //       if (videoRef2.current) {
+  //         videoRef2.current.play(); // 비디오 재생
+  //       }
+  //     }
+  //   }
+  // };
 
-  const handleTouchMove2 = (e) => {
-    if (dividerRef2.current) {
-      const rect = dividerRef2.current.parentNode.getBoundingClientRect();
-      const touch = e.touches[0];
-      const newPosition = ((touch.clientX - rect.left) / rect.width) * 90;
-      if (newPosition >= 0 && newPosition <= 100) {
-        setPosition2(newPosition);
-        if (videoRef2.current) {
-          videoRef2.current.play(); // 비디오 재생
-        }
-      }
-    }
-  };
+  // const handleTouchMove2 = (e) => {
+  //   if (dividerRef2.current) {
+  //     const rect = dividerRef2.current.parentNode.getBoundingClientRect();
+  //     const touch = e.touches[0];
+  //     const newPosition = ((touch.clientX - rect.left) / rect.width) * 90;
+  //     if (newPosition >= 0 && newPosition <= 100) {
+  //       setPosition2(newPosition);
+  //       if (videoRef2.current) {
+  //         videoRef2.current.play(); // 비디오 재생
+  //       }
+  //     }
+  //   }
+  // };
 
   const handleMouseDown1 = () => {
     window.addEventListener("mousemove", handleMouseMove1);
@@ -239,15 +239,15 @@ const Healthcare = () => {
     window.addEventListener("touchend", handleTouchEnd1);
   };
 
-  const handleMouseDown2 = () => {
-    window.addEventListener("mousemove", handleMouseMove2);
-    window.addEventListener("mouseup", handleMouseUp2);
-  };
+  // const handleMouseDown2 = () => {
+  //   window.addEventListener("mousemove", handleMouseMove2);
+  //   window.addEventListener("mouseup", handleMouseUp2);
+  // };
 
-  const handleTouchStart2 = () => {
-    window.addEventListener("touchmove", handleTouchMove2);
-    window.addEventListener("touchend", handleTouchEnd2);
-  };
+  // const handleTouchStart2 = () => {
+  //   window.addEventListener("touchmove", handleTouchMove2);
+  //   window.addEventListener("touchend", handleTouchEnd2);
+  // };
 
   const handleMouseUp1 = () => {
     window.removeEventListener("mousemove", handleMouseMove1);
@@ -259,15 +259,15 @@ const Healthcare = () => {
     window.removeEventListener("touchend", handleTouchEnd1);
   };
 
-  const handleMouseUp2 = () => {
-    window.removeEventListener("mousemove", handleMouseMove2);
-    window.removeEventListener("mouseup", handleMouseUp2);
-  };
+  // const handleMouseUp2 = () => {
+  //   window.removeEventListener("mousemove", handleMouseMove2);
+  //   window.removeEventListener("mouseup", handleMouseUp2);
+  // };
 
-  const handleTouchEnd2 = () => {
-    window.removeEventListener("touchmove", handleTouchMove2);
-    window.removeEventListener("touchend", handleTouchEnd2);
-  };
+  // const handleTouchEnd2 = () => {
+  //   window.removeEventListener("touchmove", handleTouchMove2);
+  //   window.removeEventListener("touchend", handleTouchEnd2);
+  // };
 
   return (
     <Container>

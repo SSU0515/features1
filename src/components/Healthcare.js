@@ -1,12 +1,14 @@
 import React, { useState, useRef } from "react";
 import after from "../asset/after.mp4";
 import before from "../asset/before.mp4";
-import after1 from "../asset/after1.mp4";
-import before1 from "../asset/before1.mp4";
+// import after1 from "../asset/after1.mp4";
+// import before1 from "../asset/before1.mp4";
 import styled from "styled-components";
 import videoBg from "../asset/videoBg1.jfif";
 import videoBg2 from "../asset/videoBg2.jfif";
 import divider from "../asset/divider.svg";
+import AudioPlayer from "./AudioPlayer";
+
 
 const Container = styled.div`
   width: 100%;
@@ -153,15 +155,16 @@ const Video2 = styled.video`
   height: 100%;
 `;
 
-const Video3 = styled.video`
-  width: 100%;
-  height: 100%;
-`;
+// const Video3 = styled.video`
+//   width: 100%;
+//   height: 100%;
+// `;
 
-const Video4 = styled.video`
-  width: 100%;
-  height: 100%;
-`;
+// const Video4 = styled.video`
+//   width: 100%;
+//   height: 100%;
+// `;
+
 
 
 const Healthcare = () => {
@@ -291,7 +294,7 @@ const Healthcare = () => {
           <span>Output</span>
         </TextBox>
       </div>
-      <div>
+      {/* <div>
         <Wrapper2>
           <VideoWrapper>
             {position2 > 50 ? (
@@ -311,7 +314,9 @@ const Healthcare = () => {
           <span>Input</span>
           <span>Output</span>
         </TextBox>
-      </div>
+      </div> */}
+
+<AudioPlayer />
     </Container>
   );
 };
